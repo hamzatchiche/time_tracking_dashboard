@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+  :root {
+    --Purple600: hsl(246, 80%, 60%);
+    --Orange300: hsl(15, 100%, 70%);
+    --Blue300: hsl(195, 74%, 62%);
+    --Pink400: hsl(348, 100%, 68%);
+    --Green400: hsl(145, 58%, 55%);
+    --Purple700: hsl(264, 64%, 52%);
+    --Yellow300: hsl(43, 84%, 65%);
+    --Navy950: hsl(226, 43%, 10%);
+    --Navy900: hsl(235, 46%, 20%);
+    --Purple500: hsl(235, 45%, 61%);
+    --Navy200: hsl(236, 100%, 87%);
+    --Rubik: "Rubik", sans-serif;
+  }
+
+   .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+    .icon-ellipsis {
+    width: 24px;
+    height: 24px;
+    fill: #555; 
+    transition: fill 0.3s;
+    cursor: pointer;
+  }
+
+  .icon-ellipsis:hover {
+    fill: white; 
+  }
+
+  .active {
+  color: white;
+  /* font-weight: bold; */
+}

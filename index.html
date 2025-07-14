@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+    <title>Frontend Mentor | Time tracking dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+  </head>
+  <body class="text-white bg-[var(--Navy950)]">
+    <section class="font-[Rubik] flex items-center justify-center mt-20">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 px-4 w-full md:w-3/4 lg:w-2/3">
+        <div class="md:row-span-2 col-span-1 flex flex-col bg-[var(--Navy900)] rounded-xl w-full md:h-2/3">
+  
+  <div class="bg-[var(--Purple600)] p-4 rounded-xl w-full flex md:flex-col flex-row md:items-start items-center gap-4 md:pb-14">
+    
+    <img src="images/image-jeremy.png" alt="" class="w-14 border-white border-2 rounded-full" />
+
+    <div class="flex flex-col  items-start ">
+      <p class="text-[var(--Navy200)] text-sm font-light md:pt-5 ">Report for</p>
+      <h1 class="font-normal text-[var(--Navy200)] text-xl md:text-3xl">Jeremy Robson</h1>
+    </div>
+  </div>
+
+  <div class="bg-[var(--Navy900)] pl-4 pb-3 text-[var(--Navy200)] rounded-b-xl ">
+    <ul class="leading-loose flex flex-row md:flex-col justify-around " id="timeframes">
+      <li class="time-btn hover:text-white cursor-pointer" data-type="daily">Daily</li>
+      <li class="time-btn hover:text-white cursor-pointer active" data-type="weekly">Weekly</li>
+      <li class="time-btn hover:text-white cursor-pointer" data-type="monthly">Monthly</li>
+    </ul>
+  </div>
+</div>
+
+
+        <!-- Work Card -->
+        <div class="flex flex-col w-full">
+          <div class="bg-[var(--Orange300)] rounded-t-xl overflow-hidden">
+            <img src="images/icon-work.svg" class="float-right -mt-2 mr-2 w-14" />
+          </div>
+          <div class="bg-[var(--Navy900)] hover:bg-[var(--Purple500)] rounded-xl w-full relative -top-3">
+            <div class="card flex justify-between py-4 px-4" data-title="work">
+              <p>Work</p>
+              <svg class="icon-ellipsis" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <circle cx="5" cy="12" r="2" />
+                <circle cx="12" cy="12" r="2" />
+                <circle cx="19" cy="12" r="2" />
+              </svg>
+            </div>
+            <div class="flex flex-row items-center md:items-start mb-2 justify-between pr-5 md:flex-col pl-4">
+              <h1 class="font-normal text-4xl current-hour"></h1>
+              <p class="text-[var(--Navy200)] text-base font-light previous-hour"></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Play Card -->
+        <div class="flex flex-col w-full">
+          <div class="bg-[var(--Blue300)] rounded-t-xl overflow-hidden">
+            <img src="images/icon-play.svg" class="float-right -mt-2 mr-2 w-14" />
+          </div>
+          <div class="bg-[var(--Navy900)] hover:bg-[var(--Purple500)] rounded-xl w-full relative -top-3">
+            <div class="card flex justify-between py-4 px-4" data-title="play">
+              <p>Play</p>
+              <svg class="icon-ellipsis" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <circle cx="5" cy="12" r="2" />
+                <circle cx="12" cy="12" r="2" />
+                <circle cx="19" cy="12" r="2" />
+              </svg>
+            </div>
+            <div class="flex flex-row items-center mb-2 justify-between pr-5 md:flex-col pl-4 md:items-start">
+              <h1 class="font-normal text-4xl current-hour"></h1>
+              <p class="text-[var(--Navy200)] text-base font-light previous-hour"></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Study Card -->
+        <div class="flex flex-col w-full">
+          <div class="bg-[var(--Pink400)] rounded-t-xl ">
+            <img src="images/icon-study.svg" class="float-right  mr-2 w-12" />
+          </div>
+          <div class="bg-[var(--Navy900)] hover:bg-[var(--Purple500)] rounded-xl w-full relative -top-3">
+            <div class="card flex justify-between py-4 px-4" data-title="Study">
+              <p>Study</p>
+              <svg class="icon-ellipsis" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <circle cx="5" cy="12" r="2" />
+                <circle cx="12" cy="12" r="2" />
+                <circle cx="19" cy="12" r="2" />
+              </svg>
+            </div>
+            <div class="flex flex-row items-center mb-2 justify-between pr-5 md:flex-col pl-4 md:items-start">
+              <h1 class="font-normal text-4xl current-hour"></h1>
+              <p class="text-[var(--Navy200)] text-base font-light previous-hour"></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Exercise Card -->
+        <div class="flex flex-col w-full">
+          <div class="bg-[var(--Green400)] rounded-t-xl">
+            <img src="images/icon-exercise.svg" class="float-right mr-2 w-16" />
+          </div>
+          <div class="bg-[var(--Navy900)] hover:bg-[var(--Purple500)] rounded-xl w-full relative -top-2">
+            <div class="card flex justify-between py-4 px-4" data-title="Exercise">
+              <p>Exercise</p>
+              <svg class="icon-ellipsis" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <circle cx="5" cy="12" r="2" />
+                <circle cx="12" cy="12" r="2" />
+                <circle cx="19" cy="12" r="2" />
+              </svg>
+            </div>
+            <div class="flex flex-row items-center mb-2 justify-between pr-5 md:flex-col pl-4 md:items-start">
+              <h1 class="font-normal text-4xl current-hour"></h1>
+              <p class="text-[var(--Navy200)] text-base font-light previous-hour"></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Social Card -->
+        <div class="flex flex-col w-full">
+          <div class="bg-[var(--Purple700)] rounded-t-xl overflow-hidden">
+            <img src="images/icon-social.svg" class="float-right mr-2 w-12 relative -top-2 " />
+          </div>
+          <div class="bg-[var(--Navy900)] hover:bg-[var(--Purple500)] rounded-xl w-full relative -top-7 ">
+            <div class="card flex justify-between py-4 px-4" data-title="Social">
+              <p>Social</p>
+              <svg class="icon-ellipsis" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <circle cx="5" cy="12" r="2" />
+                <circle cx="12" cy="12" r="2" />
+                <circle cx="19" cy="12" r="2" />
+              </svg>
+            </div>
+            <div class="flex flex-row items-center mb-2 justify-between pr-5 md:flex-col pl-4 md:items-start">
+              <h1 class="font-normal text-4xl current-hour"></h1>
+              <p class="text-[var(--Navy200)] text-base font-light previous-hour"></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Self Care Card -->
+        <div class="flex flex-col w-full">
+          <div class="bg-[var(--Yellow300)] rounded-t-xl overflow-hidden">
+            <img src="images/icon-self-care.svg" class="float-right mb-7 mr-2 w-12 relative -top-2" />
+          </div>
+          <div class="bg-[var(--Navy900)] hover:bg-[var(--Purple500)] rounded-xl w-full relative -top-10">
+            <div class="card flex justify-between py-4 px-4" data-title="self">
+              <p>Self Care</p>
+              <svg class="icon-ellipsis" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <circle cx="5" cy="12" r="2" />
+                <circle cx="12" cy="12" r="2" />
+                <circle cx="19" cy="12" r="2" />
+              </svg>
+            </div>
+            <div class="flex flex-row items-center mb-2 justify-between pr-5 md:flex-col pl-4 md:items-start">
+              <h1 class="font-normal text-4xl current-hour"></h1>
+              <p class="text-[var(--Navy200)] text-base font-light previous-hour"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="#">hamza tchiche</a>.
+    </div>
+    
+    <script src="script/script.js"></script>
+  </body>
+</html>
